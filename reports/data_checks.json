@@ -1,0 +1,38 @@
+{
+  "data_sha256": "bd0f491c45e2a1685d72d951309615bf0642b6dac6f1462fe9bb9640b5ca7063",
+  "leaking_column": {
+    "present": false,
+    "column": null
+  },
+  "unit_mixup": {
+    "present": false,
+    "column": null,
+    "group_value": null,
+    "factor": null
+  },
+  "sentinel_value": {
+    "present": true,
+    "column": "hour",
+    "value": 9999,
+    "count": 55
+  },
+  "duplicate_rows": {
+    "present": false,
+    "count": null
+  },
+  "stuck_sensor": {
+    "present": true,
+    "column": "driver_exp_yr",
+    "start_date": "2026-03-29",
+    "end_date": "2026-04-19"
+  },
+  "target_typos": {
+    "present": true,
+    "count": 12
+  },
+  "spelling_variants": {
+    "present": true,
+    "column": "weather",
+    "true_levels": 3
+  }
+}

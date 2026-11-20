@@ -1,0 +1,13 @@
+data:
+  raw_train: data/raw/train.csv
+  raw_later: data/raw/later.csv
+  raw_holdout: data/raw/holdout_features.csv
+  target: delay_min
+  group_col: depot_zone
+  date_col: date
+checks:
+  sentinel_candidates: [-1, -999, 999, 9999, -9999]
+  unit_factors: [10, 12, 60, 100, 1000]
+  unit_tolerance: 0.15
+  stuck_min_run: 10
+  typo_gap_ratio: 3.0
