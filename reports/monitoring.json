@@ -1,0 +1,23 @@
+{
+  "psi": {
+    "route_km": 0.018452253006686882,
+    "stops": 3.367522173140401,
+    "passengers": 0.0490704489285903,
+    "hour": 0.048143227719940805,
+    "temp_c": 0.034625215002233645,
+    "driver_exp_yr": 0.021263739145125946
+  },
+  "most_drifted_feature": "stops",
+  "mae_by_group": {
+    "East": 3.821895266638802,
+    "North": 8.944868351595549,
+    "South": 3.1933880501997085
+  },
+  "worst_served_group": "North",
+  "check_rows": 90,
+  "mae_v1_on_check": 4.311299180772106,
+  "mae_v2_on_check": 1.8757299520551993,
+  "improvement": 0.5649269806139325,
+  "decision": "promote",
+  "champion_version": 2
+}

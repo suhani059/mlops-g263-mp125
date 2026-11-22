@@ -41,22 +41,22 @@ tracking:
   experiment_name: "mp125-bus-delay"
   best_run_id: "ddd75823c6de4e35b3d718883e5d01fd"        # the MLflow run id of your v1 model
   registered_model_name: "mp125-delay-model"
-  champion_version: 1
+  champion_version: 2
 
 monitoring:
   psi:                     # cleaned train.csv vs later.csv, 10 bins
-    route_km: null
-    stops: null
-    passengers: null
-    hour: null
-    temp_c: null
-    driver_exp_yr: null
-  most_drifted_feature: null
+    route_km: 0.0185
+    stops: 3.3675
+    passengers: 0.0491
+    hour: 0.0481
+    temp_c: 0.0346
+    driver_exp_yr: 0.0213
+  most_drifted_feature: "stops"
   mae_by_group:            # v1 on later.csv, per value of depot_zone
-    'North': null
-    'South': null
-    'East': null
-  worst_served_group: null
-  mae_v1_on_check: null    # v1 on the last 30% of later.csv (by date)
-  mae_v2_on_check: null    # v2 on the same rows
-  decision: null           # promote or keep
+    'North': 8.9449
+    'South': 3.1934
+    'East': 3.8219
+  worst_served_group: "North"
+  mae_v1_on_check: 4.3113   # v1 on the last 30% of later.csv (by date)
+  mae_v2_on_check: 1.8757   # v2 on the same rows
+  decision: "promote"   # promote or keep
