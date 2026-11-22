@@ -11,3 +11,20 @@ checks:
   unit_tolerance: 0.15
   stuck_min_run: 10
   typo_gap_ratio: 3.0
+train:
+  tracking_uri: sqlite:///mlflow.db
+  experiment_name: mp125-bus-delay
+  registered_model_name: mp125-delay-model
+  model_path: models/model.joblib
+  train_fraction: 0.8
+  seed: 42
+  settings:
+    - name: rf_small
+      kind: random_forest
+      params: {n_estimators: 50, max_depth: 5}
+    - name: rf_large
+      kind: random_forest
+      params: {n_estimators: 200, max_depth: 10}
+    - name: gbr_default
+      kind: gradient_boosting
+      params: {n_estimators: 150, learning_rate: 0.05, max_depth: 3}

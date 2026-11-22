@@ -72,15 +72,20 @@ def check_stuck_sensor(train, date_col, min_run=10, skip=()):
     return {"present": True, "column": best[0], "start_date": best[2], "end_date": best[3]}
 
 
-def check_target_typos(train, target, gap_ratio=3.0):
-    """Targets typed 10x too big: a small cluster above a large empty gap."""
+def find_typo_cutoff(train, target, gap_ratio=3.0):
+    """Smallest target value of the 'too big' cluster, or None if there is none."""
     s = np.sort(train[target].values)
     top = s[-max(5, len(s) // 5):]                    # look in the top 20%
     ratios = top[1:] / top[:-1]
     i = int(np.argmax(ratios))
-    if ratios[i] < gap_ratio:
+    return float(top[i + 1]) if ratios[i] >= gap_ratio else None
+
+
+def check_target_typos(train, target, gap_ratio=3.0):
+    """Targets typed 10x too big: a small cluster above a large empty gap."""
+    cutoff = find_typo_cutoff(train, target, gap_ratio)
+    if cutoff is None:
         return {"present": False, "count": None}
-    cutoff = top[i + 1]
     return {"present": True, "count": int((train[target] >= cutoff).sum())}
 
 

@@ -38,10 +38,10 @@ data_issues:
     true_levels: 3      # how many real categories there are after cleaning
 
 tracking:
-  experiment_name: null
-  best_run_id: null        # the MLflow run id of your v1 model
-  registered_model_name: null
-  champion_version: null
+  experiment_name: "mp125-bus-delay"
+  best_run_id: "ddd75823c6de4e35b3d718883e5d01fd"        # the MLflow run id of your v1 model
+  registered_model_name: "mp125-delay-model"
+  champion_version: 1
 
 monitoring:
   psi:                     # cleaned train.csv vs later.csv, 10 bins
